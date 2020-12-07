@@ -1,0 +1,1 @@
+# poc-seed-front-end
