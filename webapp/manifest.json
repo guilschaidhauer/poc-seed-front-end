@@ -28,10 +28,6 @@
 					"supportedLocales": ["en", "de"],
 					"fallbackLocale": "en"
 				}
-			},
-			"": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/todoitems.json"
 			}
 		},
 		"resources": {
