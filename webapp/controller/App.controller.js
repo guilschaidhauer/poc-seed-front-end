@@ -29,6 +29,10 @@ sap.ui.define([
 			this.getView().setModel(oModel);
 		},
 
+		_onAddPress: function() {
+			console.log("Add a book");
+		}
+
 	});
 
 });

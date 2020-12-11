@@ -18,6 +18,9 @@
 
 				<footer>
 					<Toolbar>
+						<ToolbarSpacer />
+						<Button text="Add new book" press="_onAddPress" type="Emphasized">
+						</Button>
 					</Toolbar>
 				</footer>
 
