@@ -49,6 +49,11 @@
 				"pattern": "book",
 				"name": "book",
 				"target": "book"
+			  },
+			  {
+				"pattern": "newBook",
+				"name": "newBook",
+				"target": "newBook"
 			  }
 			],
 			"targets": {
@@ -57,6 +62,9 @@
 			  },
 			  "book": {
 				"viewName": "Book"
+			  },
+			  "newBook": {
+				"viewName": "NewBook"
 			  }
 			}
 		},
