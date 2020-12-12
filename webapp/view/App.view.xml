@@ -7,12 +7,14 @@
 				<content>
 					<List
 						headerText="Books"
+						mode="Delete"
+						delete="_onDeletePress"
 						items="{
 							path: '/Books'
 						}" >
 						<StandardListItem
-							title="{Name}"
-							counter="{Quantity}"/>
+							title="{name}"
+							counter="{price	}"/>
 					</List>
 				</content>
 

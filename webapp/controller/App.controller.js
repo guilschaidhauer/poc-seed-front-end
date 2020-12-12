@@ -11,26 +11,44 @@ sap.ui.define([
 	return Controller.extend("sap.ui.demo.todo.controller.App", {
 
 		onInit: function() {
-			var oModel = new JSONModel({"Books": [
+
+			this.oModel = new JSONModel({"Books": [
 				{
-					"Name": "Notebook Basic 15",
-					"Quantity": 10
+					"id": 1,
+					"name": "Harry Potter",
+					"description": "A nice book",
+					"price": 99
 				},
 				{
-					"Name": "Notebook Basic 17",
-					"Quantity": 20
-				},
-				{
-					"Name": "Notebook Basic 18",
-					"Quantity": 10
+					"id": 2,
+					"name": "Harry Potter 2",
+					"description": "A nice book",
+					"price": 99
 				}
 			]});
 
-			this.getView().setModel(oModel);
+			this.getView().setModel(this.oModel);
 		},
 
 		_onAddPress: function() {
-			console.log("Add a book");
+			var newBook = {
+				id: 2,
+				name: "Book", 
+				description: "test",
+				price: 99
+			};
+
+			this.oModel.getData().Books.push(newBook);
+			this._refreshModel();
+		},
+
+		_onDeletePress: function(oEvent) {
+
+		},
+
+		_refreshModel: function() {
+			this.getView().setModel(this.oModel);
+			this.getView().getModel().refresh();
 		}
 
 	});
