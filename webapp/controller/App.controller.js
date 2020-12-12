@@ -4,8 +4,9 @@ sap.ui.define([
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
 	"sap/ui/model/json/JSONModel", 
-	"sap/ui/model/odata/ODataModel"
-], function(Device, Controller, Filter, FilterOperator, JSONModel, ODataModel) {
+	"sap/ui/model/odata/ODataModel",
+	"sap/ui/demo/todo/util/HTTPRequestHelper"
+], function(Device, Controller, Filter, FilterOperator, JSONModel, ODataModel, HTTPRequestHelper) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.todo.controller.App", {
