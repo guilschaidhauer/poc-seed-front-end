@@ -30,6 +30,36 @@
 				}
 			}
 		},
+		"routing": {
+			"config": {
+			  "routerClass": "sap.m.routing.Router",
+			  "viewType": "XML",
+			  "viewPath": "sap.ui.demo.todo.view",
+			  "controlId": "app",
+			  "controlAggregation": "pages",
+			  "async" : true
+			},
+			"routes": [
+			  {
+				"pattern": "",
+				"name": "app",
+				"target": "app"
+			  },
+			  {
+				"pattern": "book",
+				"name": "book",
+				"target": "book"
+			  }
+			],
+			"targets": {
+			  "app": {
+				"viewName": "App"
+			  },
+			  "book": {
+				"viewName": "Book"
+			  }
+			}
+		},
 		"resources": {
 			"css": [
 				{
