@@ -4,7 +4,7 @@ sap.ui.define([
 ], function(require, URLProvider) {
 	"use strict";
 	return {
-		doGet: function(path, headers, successCallback, detail = "") {
+		doGet: function(path, successCallback, headers = {}, detail = "") {
 			var completeUrl = URLProvider.getDestination() + path;
 			if (detail !== "") completeUrl = completeUrl + "/" + detail;
 
@@ -23,7 +23,7 @@ sap.ui.define([
 			});
 		},
 
-		doPost: function(path, data, headers, successCallback) {
+		doPost: function(path, data, successCallback, headers = {}) {
 			var completeUrl = URLProvider.getDestination() + path;
 
 			$.ajax({
@@ -42,7 +42,7 @@ sap.ui.define([
 			});
 		},
 
-		doDelete: function(path, headers, successCallback, detail = "") {
+		doDelete: function(path, successCallback, headers = {}, detail = "") {
 			var completeUrl = URLProvider.getDestination() + path;
 			if (detail !== "") completeUrl = completeUrl + "/" + detail;
 

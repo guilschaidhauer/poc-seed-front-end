@@ -12,74 +12,29 @@ sap.ui.define([
 	return Controller.extend("sap.ui.demo.todo.controller.App", {
 
 		onInit: function() {
-
-			this.oModel = new JSONModel({"Books": [
-				{
-					"id": 1,
-					"name": "Harry Potter",
-					"description": "A nice book",
-					"price": 99
-				},
-				{
-					"id": 2,
-					"name": "Harry Potter 2",
-					"description": "A nice book",
-					"price": 99
-				}
-			]});
-
+			this.oModel = new JSONModel();
 			this.getView().setModel(this.oModel);
+
+			this._getBooks();
+		},
+
+		_getBooks: function() {
+			HTTPRequestHelper.doGet(
+				"books",  
+				this._handleGetBooksResponse.bind(this)
+			);
+		},
+
+		_handleGetBooksResponse: function(res) {
+			this.oModel = new JSONModel({"Books": res});
+			this._refreshModel();
+			console.log(res);	
 		},
 
 		_onAddPress: function() {
-			var newBook = {
-				id: 2,
-				name: "Book", 
-				description: "test",
-				price: 99
-			};
-
-			HTTPRequestHelper.doGet(
-				"books",
-				{},  
-				this._callBackFunction,
-				"2"
-			);
-
-			var book = { 
-				name: "Percy Jackson",
-				description: "It is a cool book",
-				price: 99999
-			};
-
-			/*HTTPRequestHelper.doPost(
-				"books",
-				book,
-				{},  
-				this._callBackFunction
-			);*/
-
-			/*HTTPRequestHelper.doDelete(
-				"books",
-				{},  
-				this._callBackFunction,
-				"7"
-			);*/
-
-			HTTPRequestHelper.doPatch(
-				"books",
-				book,
-				{},  
-				this._callBackFunction,
-				"8",
-			);
 
 			this.oModel.getData().Books.push(newBook);
 			this._refreshModel();
-		},
-
-		_onDeletePress: function(oEvent) {
-
 		},
 
 		_refreshModel: function() {
