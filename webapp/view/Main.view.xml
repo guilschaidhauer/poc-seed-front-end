@@ -1,0 +1,5 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" controllerName="sap.ui.demo.todo.controller.Main" displayBlock="true">
+		<App id="app">
+
+		</App>
+</mvc:View>

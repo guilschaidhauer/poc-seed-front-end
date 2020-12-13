@@ -28,7 +28,6 @@ sap.ui.define([
 		_handleGetBooksResponse: function(res) {
 			this.oModel = new JSONModel({"Books": res});
 			this._refreshModel();
-			console.log(res);	
 		},
 
 		_onAddPress: function() {

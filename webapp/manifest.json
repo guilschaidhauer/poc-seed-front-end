@@ -15,10 +15,10 @@
 			}
 		},
 		"rootView": {
-			"viewName": "sap.ui.demo.todo.view.App",
+			"viewName": "sap.ui.demo.todo.view.Main",
 			"type": "XML",
 			"async": true,
-			"id": "app"
+			"id": "main"
 		},
 		"models": {
 			"i18n": {
@@ -46,6 +46,11 @@
 				"target": "app"
 			  },
 			  {
+				"pattern": "main",
+				"name": "main",
+				"target": "main"
+			  },
+			  {
 				"pattern": "book",
 				"name": "book",
 				"target": "book"
@@ -62,6 +67,9 @@
 			  },
 			  "book": {
 				"viewName": "Book"
+			  },
+			  "main": {
+				"viewName": "Main"
 			  },
 			  "newBook": {
 				"viewName": "NewBook"
