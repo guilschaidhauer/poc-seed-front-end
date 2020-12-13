@@ -39,6 +39,8 @@ sap.ui.define([
 				price: 99
 			};
 
+			HTTPRequestHelper.doGet("books", this._callBackFunction);
+
 			this.oModel.getData().Books.push(newBook);
 			this._refreshModel();
 		},
@@ -50,8 +52,11 @@ sap.ui.define([
 		_refreshModel: function() {
 			this.getView().setModel(this.oModel);
 			this.getView().getModel().refresh();
-		}
+		},
 
+		_callBackFunction: function(res) {
+			console.log(res);
+		},
 	});
 
 });
