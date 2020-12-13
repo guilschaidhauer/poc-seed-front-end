@@ -49,7 +49,7 @@ sap.ui.define([
 			var book = { 
 				name: "Percy Jackson",
 				description: "It is a cool book",
-				price: 99
+				price: 99999
 			};
 
 			/*HTTPRequestHelper.doPost(
@@ -59,11 +59,19 @@ sap.ui.define([
 				this._callBackFunction
 			);*/
 
-			HTTPRequestHelper.doDelete(
+			/*HTTPRequestHelper.doDelete(
 				"books",
 				{},  
 				this._callBackFunction,
 				"7"
+			);*/
+
+			HTTPRequestHelper.doPatch(
+				"books",
+				book,
+				{},  
+				this._callBackFunction,
+				"8",
 			);
 
 			this.oModel.getData().Books.push(newBook);
