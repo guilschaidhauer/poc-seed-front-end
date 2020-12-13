@@ -4,22 +4,23 @@ sap.ui.define([
 ], function(require, URLProvider) {
 	"use strict";
 	return {
-		doGet: function(path, successCallback) {
+		doGet: function(path, headers, successCallback, detail = "") {
+			var completeUrl = URLProvider.getDestination() + path;
+			if (detail !== "") completeUrl = completeUrl + "/" + detail;
+
 			$.ajax({
 				type: "GET",
-				//data: "{}",
 				crossDomain: true,
-				url: URLProvider.getDestination() + path,
-				headers: {'key1':'value1','key2':'value2'},
+				url: completeUrl,
+				headers: headers,
 				contentType: "application/json",
 				success: function (res, status, xhr) {
-					successCallback(res);	
-					console.log(URLProvider.getDestination());
+					successCallback(res, status, xhr);	
 				},
 				error: function (jqXHR, textStatus, errorThrown) {
 				  console.log("Got an error response: " + textStatus + errorThrown);
 				}
-			  });
+			});
 		}
 	};
 });

@@ -39,7 +39,12 @@ sap.ui.define([
 				price: 99
 			};
 
-			HTTPRequestHelper.doGet("books", this._callBackFunction);
+			HTTPRequestHelper.doGet(
+				"books",
+				{},  
+				this._callBackFunction,
+				"2"
+			);
 
 			this.oModel.getData().Books.push(newBook);
 			this._refreshModel();
