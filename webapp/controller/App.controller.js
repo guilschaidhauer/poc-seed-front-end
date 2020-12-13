@@ -46,6 +46,19 @@ sap.ui.define([
 				"2"
 			);
 
+			var book = { 
+				name: "Percy Jackson",
+				description: "It is a cool book",
+				price: 99
+			};
+
+			HTTPRequestHelper.doPost(
+				"books",
+				book,
+				{},  
+				this._callBackFunction
+			);
+
 			this.oModel.getData().Books.push(newBook);
 			this._refreshModel();
 		},

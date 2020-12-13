@@ -21,6 +21,25 @@ sap.ui.define([
 				  console.log("Got an error response: " + textStatus + errorThrown);
 				}
 			});
+		},
+
+		doPost: function(path, data, headers, successCallback) {
+			var completeUrl = URLProvider.getDestination() + path;
+
+			$.ajax({
+				type: "POST",
+				crossDomain: true,
+				data: JSON.stringify(data),
+				url: completeUrl,
+				headers: headers,
+				contentType: "application/json",
+				success: function (res, status, xhr) {
+					successCallback(res, status, xhr);	
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+				  console.log("Got an error response: " + textStatus + errorThrown);
+				}
+			});
 		}
 	};
 });
