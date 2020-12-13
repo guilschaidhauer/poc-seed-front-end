@@ -40,6 +40,25 @@ sap.ui.define([
 				  console.log("Got an error response: " + textStatus + errorThrown);
 				}
 			});
+		},
+
+		doDelete: function(path, headers, successCallback, detail = "") {
+			var completeUrl = URLProvider.getDestination() + path;
+			if (detail !== "") completeUrl = completeUrl + "/" + detail;
+
+			$.ajax({
+				type: "DELETE",
+				crossDomain: true,
+				url: completeUrl,
+				headers: headers,
+				contentType: "application/json",
+				success: function (res, status, xhr) {
+					successCallback(res, status, xhr);	
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+				  console.log("Got an error response: " + textStatus + errorThrown);
+				}
+			});
 		}
 	};
 });

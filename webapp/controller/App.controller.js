@@ -52,11 +52,18 @@ sap.ui.define([
 				price: 99
 			};
 
-			HTTPRequestHelper.doPost(
+			/*HTTPRequestHelper.doPost(
 				"books",
 				book,
 				{},  
 				this._callBackFunction
+			);*/
+
+			HTTPRequestHelper.doDelete(
+				"books",
+				{},  
+				this._callBackFunction,
+				"7"
 			);
 
 			this.oModel.getData().Books.push(newBook);
