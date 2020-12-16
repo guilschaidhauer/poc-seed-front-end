@@ -32,11 +32,11 @@
                             singleContainerFullSize="false" >
                             <j:content>
                                 <Label text="Name" />
-                                <Input id="name" value="{name}" />
+                                <Input id="name" />
                                 <Label text="Description" />
-                                <Input id="description" value="{description}" />
+                                <Input id="description" />
                                 <Label text="Price" />
-                                <Input id="price" value="{price}" />
+                                <Input id="price" />
                             </j:content>
                         </j:SimpleForm>
                     </VBox>

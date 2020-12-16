@@ -31,9 +31,8 @@ sap.ui.define([
 		},
 
 		_onAddPress: function() {
-
-			this.oModel.getData().Books.push(newBook);
-			this._refreshModel();
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("newBook");
 		},
 
 		_refreshModel: function() {
