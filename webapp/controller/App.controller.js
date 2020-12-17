@@ -35,14 +35,26 @@ sap.ui.define([
 			oRouter.navTo("newBook");
 		},
 
+		_onDeletePress: function(oEvent) {
+			var	oItem = oEvent.getParameter("listItem"),
+				sPath = oItem.getBindingContext().getPath(),
+				bookId = this.oView.getModel().getProperty(sPath).id;
+
+			HTTPRequestHelper.doDelete(
+				"books",
+				this._handleDeleteBookResponse.bind(this),
+				bookId
+			);				
+		},
+
+		_handleDeleteBookResponse: function(res) {
+			this._getBooks();
+		},
+
 		_refreshModel: function() {
 			this.getView().setModel(this.oModel);
 			this.getView().getModel().refresh();
-		},
-
-		_callBackFunction: function(res) {
-			console.log(res);
-		},
+		}
 	});
 
 });

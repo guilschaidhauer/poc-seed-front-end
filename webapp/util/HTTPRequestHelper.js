@@ -42,7 +42,7 @@ sap.ui.define([
 			});
 		},
 
-		doDelete: function(path, successCallback, headers = {}, detail = "") {
+		doDelete: function(path, successCallback, detail, headers = {}) {
 			var completeUrl = URLProvider.getDestination() + path;
 			if (detail !== "") completeUrl = completeUrl + "/" + detail;
 
