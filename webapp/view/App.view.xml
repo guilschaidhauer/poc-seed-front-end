@@ -13,8 +13,10 @@
 							path: '/Books'
 						}" >
 						<StandardListItem
+							type="Active"
 							title="{name}"
-							counter="{price	}"/>
+							counter="{price}"
+							press="_onListItemPress"/>
 					</List>
 				</content>
 

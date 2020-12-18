@@ -51,6 +51,10 @@ sap.ui.define([
 			this._getBooks();
 		},
 
+		_onListItemPress: function (res) {
+			console.log("Click");
+		},
+
 		_refreshModel: function() {
 			this.getView().setModel(this.oModel);
 			this.getView().getModel().refresh();
