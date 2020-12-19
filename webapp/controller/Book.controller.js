@@ -29,8 +29,8 @@ sap.ui.define([
 		},
 
 		_handleGetBookResponse: function(res) {
-			var oModel = new JSONModel(res);
-			this.getView().setModel(oModel, "Book");
+			this.oModel = new JSONModel(res);
+			this.getView().setModel(this.oModel, "Book");
 			this.getView().getModel().refresh();
 		}
 	});
