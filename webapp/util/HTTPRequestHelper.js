@@ -61,7 +61,7 @@ sap.ui.define([
 			});
 		},
 
-		doPatch: function(path, data, headers, successCallback, detail = "") {
+		doPatch: function(path, data, successCallback, detail = "", headers) {
 			var completeUrl = URLProvider.getDestination() + path;
 			if (detail !== "") completeUrl = completeUrl + "/" + detail;
 

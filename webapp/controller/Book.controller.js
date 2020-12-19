@@ -36,23 +36,19 @@ sap.ui.define([
 
 		_onEditPress : function () {
 			//Clone the data
-			this._oBook = Object.assign({}, this.getView().getModel().getData());
+			this._oBook = Object.assign({}, this.oModel.getData());
 			this._toggleButtonsAndView(true);
 		},
 
 		_onSavePress : function () {
-			this._toggleButtonsAndView(false);
+			this._saveBookChanges();
+			//this._toggleButtonsAndView(false);
 		},
 
 		_onCancelPress : function () {
-
 			//Restore the data
-			var oModel = this.getView().getModel();
-			var oData = oModel.getData();
-
-			//oData.SupplierCollection[0] = this._oSupplier;
-
-			//oModel.setData(oData);
+			this._setBookModel(this._oBook);
+	
 			this._toggleButtonsAndView(false);
 		},
 
@@ -68,8 +64,28 @@ sap.ui.define([
 			this._showFormFragment(bEdit ? "Change" : "Display");
 		},
 
-		_handleGetBookResponse: function(res) {
-			this.oModel = new JSONModel(res);
+		_saveBookChanges: function () {
+			var book = this.oModel.getData();
+
+			HTTPRequestHelper.doPatch(
+				"books",
+				book,
+				this._handleSaveBookChangesResponse.bind(this),
+				book.id
+			);
+		},
+
+		_handleSaveBookChangesResponse: function (res) {
+			this._toggleButtonsAndView(false);
+			console.log(res);
+		},
+
+		_handleGetBookResponse: function (res) {
+			this._setBookModel(res);
+		},
+
+		_setBookModel: function (book) {
+			this.oModel = new JSONModel(book);
 			this.getView().setModel(this.oModel, "Book");
 			this.getView().getModel().refresh();
 			this.byId('edit').setEnabled(true);
