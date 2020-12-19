@@ -23,8 +23,9 @@
 				<footer>
 					<Toolbar>
 						<ToolbarSpacer />
-						    <Button text="Edit" press="_onEditPress" type="Emphasized">
-						    </Button>
+						    <Button id="edit" text="Edit" enabled="false" press="_onEditPress" />
+							<Button id="save" text="Save" type="Emphasized" visible="false" press="_onSavePress" />
+							<Button id="cancel" text="Cancel" visible="false" press="_onCancelPress" />
 					</Toolbar>
 				</footer>
 

@@ -34,10 +34,45 @@ sap.ui.define([
 			);
 		},
 
+		_onEditPress : function () {
+			//Clone the data
+			this._oBook = Object.assign({}, this.getView().getModel().getData());
+			this._toggleButtonsAndView(true);
+		},
+
+		_onSavePress : function () {
+			this._toggleButtonsAndView(false);
+		},
+
+		_onCancelPress : function () {
+
+			//Restore the data
+			var oModel = this.getView().getModel();
+			var oData = oModel.getData();
+
+			//oData.SupplierCollection[0] = this._oSupplier;
+
+			//oModel.setData(oData);
+			this._toggleButtonsAndView(false);
+		},
+
+		_toggleButtonsAndView : function (bEdit) {
+			var oView = this.getView();
+
+			// Show the appropriate action buttons
+			oView.byId("edit").setVisible(!bEdit);
+			oView.byId("save").setVisible(bEdit);
+			oView.byId("cancel").setVisible(bEdit);
+
+			// Set the right form type
+			this._showFormFragment(bEdit ? "Change" : "Display");
+		},
+
 		_handleGetBookResponse: function(res) {
 			this.oModel = new JSONModel(res);
 			this.getView().setModel(this.oModel, "Book");
 			this.getView().getModel().refresh();
+			this.byId('edit').setEnabled(true);
 		},
 
 		_getFormFragment: function (sFragmentName) {
