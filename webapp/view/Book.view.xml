@@ -7,21 +7,23 @@
     xmlns:j="sap.ui.layout.form"
 	controllerName="sap.ui.demo.todo.controller.Book" displayBlock="true">
 		<App id="book">
-			<Page>
+			<Page id="page">
 				<customHeader>
 					<f:ShellBar core:require="{ Helper: 'sap/ui/demo/todo/util/Helper' }" title="{i18n>TITLE}" homeIcon="{:= Helper.resolvePath('./img/logo_ui5.png') }" />
 				</customHeader>
+				<!--
 				<content>
 				    <VBox class="sapUiSmallMargin">
 						<Label text="Name" />
 						<Text id="nameText" text="{Book>/name}" />
                     </VBox>
 				</content>
-
+				-->
+				
 				<footer>
 					<Toolbar>
 						<ToolbarSpacer />
-						    <Button text="Save" press="_onAddPress" type="Emphasized">
+						    <Button text="Edit" press="_onEditPress" type="Emphasized">
 						    </Button>
 					</Toolbar>
 				</footer>

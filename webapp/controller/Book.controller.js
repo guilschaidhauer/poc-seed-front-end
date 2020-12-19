@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/demo/todo/util/HTTPRequestHelper" 
-], function(Controller, JSONModel, HTTPRequestHelper) {
+	"sap/ui/demo/todo/util/HTTPRequestHelper",
+	"sap/ui/core/Fragment" 
+], function(Controller, JSONModel, HTTPRequestHelper, Fragment) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.todo.controller.Book", {
@@ -13,6 +14,11 @@ sap.ui.define([
 
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
 			oRouter.getRoute("book").attachMatched(this._onRouteMatched, this);
+
+			this._formFragments = {};
+
+			// Set the initial form to be the display one
+			this._showFormFragment("Display");
 		},
 
 		_onRouteMatched : function (oEvent) {
@@ -32,6 +38,30 @@ sap.ui.define([
 			this.oModel = new JSONModel(res);
 			this.getView().setModel(this.oModel, "Book");
 			this.getView().getModel().refresh();
+		},
+
+		_getFormFragment: function (sFragmentName) {
+			var pFormFragment = this._formFragments[sFragmentName],
+				oView = this.getView();
+
+			if (!pFormFragment) {
+				pFormFragment = Fragment.load({
+					id: oView.getId(),
+					name: "sap.ui.demo.todo.view.fragments." + sFragmentName
+				});
+				this._formFragments[sFragmentName] = pFormFragment;
+			}
+
+			return pFormFragment;
+		},
+
+		_showFormFragment : function (sFragmentName) {
+			var oPage = this.byId("page");
+
+			oPage.removeAllContent();
+			this._getFormFragment(sFragmentName).then(function(oVBox){
+				oPage.insertContent(oVBox);
+			});
 		}
 	});
 });
