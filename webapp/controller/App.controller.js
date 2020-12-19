@@ -55,7 +55,10 @@ sap.ui.define([
 			var sPath = oEvent.getSource().getBindingContext().getPath(),
 				bookId = this.oView.getModel().getProperty(sPath).id;
 
-			console.log(bookId);
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("book", {
+				bookId: bookId
+			});
 		},
 
 		_refreshModel: function() {
