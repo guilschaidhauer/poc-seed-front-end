@@ -4,7 +4,7 @@ sap.ui.define([
 ], function(require, URLProvider) {
 	"use strict";
 	return {
-		doGet: function(path, successCallback, headers = {}, detail = "") {
+		doGet: function(path, successCallback, detail = "", headers = {}) {
 			var completeUrl = URLProvider.getDestination() + path;
 			if (detail !== "") completeUrl = completeUrl + "/" + detail;
 

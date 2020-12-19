@@ -51,8 +51,11 @@ sap.ui.define([
 			this._getBooks();
 		},
 
-		_onListItemPress: function (res) {
-			console.log("Click");
+		_onListItemPress: function (oEvent) {
+			var sPath = oEvent.getSource().getBindingContext().getPath(),
+				bookId = this.oView.getModel().getProperty(sPath).id;
+
+			console.log(bookId);
 		},
 
 		_refreshModel: function() {
