@@ -1,0 +1,34 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:l="sap.ui.layout"
+    xmlns:j="sap.ui.layout.form"
+	controllerName="sap.ui.demo.todo.controller.Book" displayBlock="true">
+		<App id="book">
+			<Page id="page">
+				<customHeader>
+					<f:ShellBar core:require="{ Helper: 'sap/ui/demo/todo/util/Helper' }" title="{i18n>TITLE}" homeIcon="{:= Helper.resolvePath('./img/logo_ui5.png') }" />
+				</customHeader>
+				<!--
+				<content>
+				    <VBox class="sapUiSmallMargin">
+						<Label text="Name" />
+						<Text id="nameText" text="{Book>/name}" />
+                    </VBox>
+				</content>
+				-->
+				
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer />
+						    <Button id="edit" text="Edit" enabled="false" press="_onEditPress" />
+							<Button id="save" text="Save" type="Emphasized" visible="false" press="_onSavePress" />
+							<Button id="cancel" text="Cancel" visible="false" press="_onCancelPress" />
+					</Toolbar>
+				</footer>
+
+			</Page>
+		</App>
+</mvc:View>

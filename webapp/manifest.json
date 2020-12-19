@@ -15,10 +15,10 @@
 			}
 		},
 		"rootView": {
-			"viewName": "sap.ui.demo.todo.view.App",
+			"viewName": "sap.ui.demo.todo.view.Main",
 			"type": "XML",
 			"async": true,
-			"id": "app"
+			"id": "main"
 		},
 		"models": {
 			"i18n": {
@@ -28,10 +28,52 @@
 					"supportedLocales": ["en", "de"],
 					"fallbackLocale": "en"
 				}
+			}
+		},
+		"routing": {
+			"config": {
+			  "routerClass": "sap.m.routing.Router",
+			  "viewType": "XML",
+			  "viewPath": "sap.ui.demo.todo.view",
+			  "controlId": "app",
+			  "controlAggregation": "pages",
+			  "async" : true
 			},
-			"": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/todoitems.json"
+			"routes": [
+			  {
+				"pattern": "",
+				"name": "app",
+				"target": "app"
+			  },
+			  {
+				"pattern": "main",
+				"name": "main",
+				"target": "main"
+			  },
+			  {
+				"pattern": "book/{bookId}",
+				"name": "book",
+				"target": "book"
+			  },
+			  {
+				"pattern": "newBook",
+				"name": "newBook",
+				"target": "newBook"
+			  }
+			],
+			"targets": {
+			  "app": {
+				"viewName": "App"
+			  },
+			  "book": {
+				"viewName": "Book"
+			  },
+			  "main": {
+				"viewName": "Main"
+			  },
+			  "newBook": {
+				"viewName": "NewBook"
+			  }
 			}
 		},
 		"resources": {

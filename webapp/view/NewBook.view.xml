@@ -1,0 +1,55 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:l="sap.ui.layout"
+    xmlns:j="sap.ui.layout.form"
+    controllerName="sap.ui.demo.todo.controller.NewBook" displayBlock="true">
+		<App id="newBook">
+			<Page>
+				<customHeader>
+					<f:ShellBar core:require="{ Helper: 'sap/ui/demo/todo/util/Helper' }" title="{i18n>NEW_BOOK}" homeIcon="{:= Helper.resolvePath('./img/logo_ui5.png') }" />
+				</customHeader>
+				<content>
+                    <VBox class="sapUiSmallMargin">
+                        <j:SimpleForm id="SimpleFormChange354"
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            title="Book"
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            emptySpanS="0"
+                            columnsXL="1"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false" >
+                            <j:content>
+                                <Label text="Name" />
+                                <Input id="name" />
+                                <Label text="Description" />
+                                <Input id="description" />
+                                <Label text="Price" />
+                                <Input id="price" />
+                            </j:content>
+                        </j:SimpleForm>
+                    </VBox>
+				</content>
+
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer />
+						    <Button text="Save" press="_onSavePress" type="Emphasized" />
+                            <Button text="Cancel" press="_onCancelPress" type="Reject" />
+					</Toolbar>
+				</footer>
+
+			</Page>
+		</App>
+</mvc:View>
