@@ -11,21 +11,13 @@
 				<customHeader>
 					<f:ShellBar core:require="{ Helper: 'sap/ui/demo/todo/util/Helper' }" title="{i18n>TITLE}" homeIcon="{:= Helper.resolvePath('./img/logo_ui5.png') }" />
 				</customHeader>
-				<!--
-				<content>
-				    <VBox class="sapUiSmallMargin">
-						<Label text="Name" />
-						<Text id="nameText" text="{Book>/name}" />
-                    </VBox>
-				</content>
-				-->
 				
 				<footer>
 					<Toolbar>
 						<ToolbarSpacer />
-						    <Button id="edit" text="Edit" enabled="false" press="_onEditPress" />
-							<Button id="save" text="Save" type="Emphasized" visible="false" press="_onSavePress" />
-							<Button id="cancel" text="Cancel" visible="false" press="_onCancelPress" />
+						    <Button id="edit" text="{i18n>EDIT}" enabled="false" press="_onEditPress" />
+							<Button id="save" text="{i18n>SAVE}" type="Emphasized" visible="false" press="_onSavePress" />
+							<Button id="cancel" text="{i18n>CANCEL}" visible="false" type="Reject" press="_onCancelPress" />
 					</Toolbar>
 				</footer>
 

@@ -16,7 +16,7 @@
                         <j:SimpleForm id="SimpleFormChange354"
                             editable="true"
                             layout="ResponsiveGridLayout"
-                            title="Book"
+                            title="{i18n>NEW_BOOK_INFO}"
                             labelSpanXL="3"
                             labelSpanL="3"
                             labelSpanM="3"
@@ -31,11 +31,11 @@
                             columnsM="1"
                             singleContainerFullSize="false" >
                             <j:content>
-                                <Label text="Name" />
+                                <Label text="{i18n>NAME}" />
                                 <Input id="name" />
-                                <Label text="Description" />
+                                <Label text="{i18n>DESCRIPTION}" />
                                 <Input id="description" />
-                                <Label text="Price" />
+                                <Label text="{i18n>PRICE}" />
                                 <Input id="price" />
                             </j:content>
                         </j:SimpleForm>
@@ -45,8 +45,8 @@
 				<footer>
 					<Toolbar>
 						<ToolbarSpacer />
-						    <Button text="Save" press="_onSavePress" type="Emphasized" />
-                            <Button text="Cancel" press="_onCancelPress" type="Reject" />
+						    <Button text="{i18n>SAVE}" press="_onSavePress" type="Emphasized" />
+                            <Button text="{i18n>CANCEL}" press="_onCancelPress" type="Reject" />
 					</Toolbar>
 				</footer>
 
