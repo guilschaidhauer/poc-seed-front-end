@@ -1,4 +1,4 @@
-# POC fronend seed project using OpenUI5
+# POC frontend seed project using OpenUI5
 Frontend seed project based on OpenUI5. This project is meant to give you a head start in the development of simple or proof of concept projects.
 
 Based on openui5 project from [openui5-sample-app](https://github.com/SAP/openui5-sample-app#openui5-sample-app). For further information please visit the original github page.
