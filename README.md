@@ -13,7 +13,7 @@ For the backend project please see [poc-seed-back-end](https://github.com/guilsc
 1. Clone this repository locally and navigate into it
     ```sh
     git clone https://github.com/guilschaidhauer/poc-seed-front-end.git
-    cd openui5-sample-app
+    cd poc-seed-front-end
     ```
 1. Install all dependencies
     ```sh
@@ -24,7 +24,3 @@ For the backend project please see [poc-seed-back-end](https://github.com/guilsc
     ```sh
     ui5 serve -o index.html
     ```
-
-
-
-
