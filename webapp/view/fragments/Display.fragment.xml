@@ -7,7 +7,7 @@
 		<f:SimpleForm id="SimpleFormDisplay354"
 			editable="false"
 			layout="ResponsiveGridLayout"
-			title="Book information"
+			title="{i18n>BOOK_INFO}"
 			labelSpanXL="3"
 			labelSpanL="3"
 			labelSpanM="3"
@@ -22,11 +22,11 @@
 			columnsM="1"
 			singleContainerFullSize="false" >
 			<f:content>
-				<Label text="Name" />
+				<Label text="{i18n>NAME}" />
 				<Text id="nameText" text="{Book>/name}" />
-                <Label text="Description" />
+                <Label text="{i18n>DESCRIPTION}" />
 				<Text id="descriptionText" text="{Book>/description}" />
-                <Label text="Price" />
+                <Label text="{i18n>PRICE}" />
 				<Text id="priceText" text="{Book>/price}" />
 			</f:content>
 		</f:SimpleForm>

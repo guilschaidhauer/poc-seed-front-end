@@ -6,7 +6,7 @@
 				</customHeader>
 				<content>
 					<List
-						headerText="Books"
+						headerText="{i18n>BOOK_TITLE}"
 						mode="Delete"
 						delete="_onDeletePress"
 						items="{
@@ -23,7 +23,7 @@
 				<footer>
 					<Toolbar>
 						<ToolbarSpacer />
-						<Button text="Add new book" press="_onAddPress" type="Emphasized">
+						<Button text="{i18n>ADD_BOOK}" press="_onAddPress" type="Emphasized">
 						</Button>
 					</Toolbar>
 				</footer>

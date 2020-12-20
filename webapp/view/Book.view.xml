@@ -23,9 +23,9 @@
 				<footer>
 					<Toolbar>
 						<ToolbarSpacer />
-						    <Button id="edit" text="Edit" enabled="false" press="_onEditPress" />
-							<Button id="save" text="Save" type="Emphasized" visible="false" press="_onSavePress" />
-							<Button id="cancel" text="Cancel" visible="false" press="_onCancelPress" />
+						    <Button id="edit" text="{i18n>EDIT}" enabled="false" press="_onEditPress" />
+							<Button id="save" text="{i18n>SAVE}" type="Emphasized" visible="false" press="_onSavePress" />
+							<Button id="cancel" text="{i18n>CANCEL}" visible="false" type="Reject" press="_onCancelPress" />
 					</Toolbar>
 				</footer>
 
