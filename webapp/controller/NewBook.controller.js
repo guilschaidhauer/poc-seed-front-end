@@ -24,7 +24,7 @@ sap.ui.define([
 
 			var book = {
 				name: bookName,
-				description: bookDescription.getValue,
+				description: bookDescription,
 				price: bookPrice
 			}
 
